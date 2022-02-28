@@ -5,6 +5,7 @@ data = pd.read_csv('Chase5093_Activity20220225.CSV')
 data = data.drop(columns='Memo')
 data['Description'] = data['Description'].str.upper()
 # strip "'" ssss
+data['Description'] = data['Description'].str.replace("'", "")
 data['Bucket'] = np.NaN
 data['Vendor'] = np.NaN
 data.loc[data['Category'] == 'Gas', 'Bucket'] = 'FUEL'
@@ -41,7 +42,10 @@ entertainment = ['DISNEYPLUS',
                  'WOODLANDS TENNIS'
                  ]
 
-giving = ['CHRIST COMMUNITY CHURC']
+giving = ['CHRIST COMMUNITY CHURC',
+          'MOSAICS OF MERCY',
+          'CALVERT HOSPICE'
+          ]
 
 grocery = ['H-E-B #',
            'HEB ONLINE',
@@ -97,7 +101,8 @@ subscription = ['JETBRAINS',
                 ]
 
 travel = ['UNITED',
-          'AIRBNB'
+          'AIRBNB',
+          'TRAVEL RESERVATION'
           ]
 
 utilities = ['ENTERGY',

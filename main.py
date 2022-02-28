@@ -129,4 +129,5 @@ blanks = data.loc[data['Bucket'] == np.nan]
 data.to_csv('test.csv')
 blanks.to_csv('test1.csv')
 
-print(data.head())
+print(data.head())  # test for merge
+
